@@ -2,7 +2,7 @@
 setlocal
 
 set "venvDir=venv"
-set "requirementsFile=requirements.txt"
+set "requirementsFile=backend/requirements.txt"
 set "backendDir=backend"
 set "pythonScript=main.py"
 

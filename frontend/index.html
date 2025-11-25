@@ -1,21 +1,48 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <title>Medicines</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-    <div class="disclaimer" id="disclaimer">
-        Disclaimer: All medicine names and prices used in this application are fictional and do not represent any real medicine(s).
-    </div>
-    <header>
-        <h1>Medicine Tracker</h1>
-    </header>
-    <main>
 
-    </main>
-    <script src="script.js"></script>
+  <h1>Medicines</h1>
+
+  <button id="reload">Reload</button>
+
+  <h2>List</h2>
+  <table id="table" border="1" cellspacing="0" cellpadding="6">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Price</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody id="tbody"></tbody>
+  </table>
+
+  <h2>Add / Update</h2>
+  <div>
+    <label>
+      Name:
+      <input type="text" id="name" />
+    </label>
+    <br /><br />
+    <label>
+      Price:
+      <input type="number" id="price" />
+    </label>
+    <br /><br />
+
+    <button id="create">Create</button>
+    <button id="update">Update</button>
+  </div>
+
+  <h2>Average price</h2>
+  <p id="avg"></p>
+
+<script src="script.js"></script>
 </body>
 </html>

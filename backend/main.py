@@ -124,7 +124,7 @@ def delete_med(name: str = Form(...)):
                 return {"message": f"Medicine deleted successfully with name: {name}"}
     return {"error": "Medicine not found"}
 
-@app.get("/medicines/average-price")
+@app.get("/average-price")
 def get_avg_price():
     """
     Calculate the average price of all medicines.
@@ -138,7 +138,12 @@ def get_avg_price():
     prices = []
     for med in data.get("medicines", []):
         price = med.get("price")
-        if isinstance(price, (int, float)):
+        try:
+            price = float(price)
+        except (TypeError, ValueError):
+            price = None
+
+        if isinstance(price, (float)):
             prices.append(price)
 
     if not prices:
