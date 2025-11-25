@@ -77,3 +77,4 @@ I addressed this by:
 ### What I would improve:
 - Add sorting and filtering to the table
 - Validate input fields with custom UI messages instead of browser defaults
+- Ideally, the backend would use **IDs** instead of names to identify items
