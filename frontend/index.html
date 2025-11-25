@@ -7,42 +7,59 @@
 </head>
 <body>
 
-  <h1>Medicines</h1>
+  <header>
+    <h1>Medicines Dashboard</h1>
+    <button id="reload">Reload</button>
+  </header>
 
-  <button id="reload">Reload</button>
+  <main>
 
-  <h2>List</h2>
-  <table id="table" border="1" cellspacing="0" cellpadding="6">
-    <thead>
-      <tr>
-        <th>Name</th>
-        <th>Price</th>
-        <th>Actions</th>
-      </tr>
-    </thead>
-    <tbody id="tbody"></tbody>
-  </table>
+    <section>
+      <h2>Medicines List</h2>
 
-  <h2>Add / Update</h2>
-  <div>
-    <label>
-      Name:
-      <input type="text" id="name" />
-    </label>
-    <br /><br />
-    <label>
-      Price:
-      <input type="number" id="price" />
-    </label>
-    <br /><br />
+      <table class="table" id="table">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Price</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody id="tbody"></tbody>
+      </table>
+    </section>
 
-    <button id="create">Create</button>
-    <button id="update">Update</button>
-  </div>
+    <section>
+      <h2>Add Medicine</h2>
 
-  <h2>Average price</h2>
-  <p id="avg"></p>
+      <form id="create-form" class="form" onsubmit="return false;">
+        <div class="form-row">
+          <label>
+            Name
+            <input type="text" id="name" class="input" />
+          </label>
+        </div>
 
-<script src="script.js"></script>
+        <div class="form-row">
+          <label>
+            Price
+            <input type="number" id="price" class="input" />
+          </label>
+        </div>
+
+        <div class="form-actions">
+          <button id="create" class="btn">Create</button>
+        </div>
+      </form>
+    </section>
+
+    <section>
+      <h2>Average Price</h2>
+      <p id="avg"></p>
+    </section>
+
+  </main>
+
+  <script src="script.js"></script>
 </body>
 </html>
