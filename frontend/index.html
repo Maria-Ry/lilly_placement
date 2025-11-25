@@ -1,65 +1,70 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-  <meta charset="UTF-8" />
-  <title>Medicines</title>
-  <link rel="stylesheet" href="style.css" />
+    <meta charset="UTF-8" />
+    <title>Medicines</title>
+    <link rel="stylesheet" href="style.css" />
 </head>
+
 <body>
 
-  <header>
-    <h1>Medicines Dashboard</h1>
-    <button id="reload">Reload</button>
-  </header>
+    <header class="page-header">
+        <h1>Medicines Dashboard</h1>
+        <button id="reload" class="btn">Reload</button>
+    </header>
 
-  <main>
+    <main class="container medicine-dashboard">
 
-    <section>
-      <h2>Medicines List</h2>
-
-      <table class="table" id="table">
-        <thead>
-          <tr>
-            <th>Name</th>
-            <th>Price</th>
-            <th>Actions</th>
-          </tr>
-        </thead>
-        <tbody id="tbody"></tbody>
-      </table>
-    </section>
-
-    <section>
-      <h2>Add Medicine</h2>
-
-      <form id="create-form" class="form" onsubmit="return false;">
-        <div class="form-row">
-          <label>
-            Name
-            <input type="text" id="name" class="input" />
-          </label>
+        <div class="list">
+            <section>
+                <h2>Medicines List</h2>
+                <table class="table" id="table">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Price</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tbody"></tbody>
+                </table>
+            </section>
         </div>
 
-        <div class="form-row">
-          <label>
-            Price
-            <input type="number" id="price" class="input" />
-          </label>
+        <div class="actions">
+            <section>
+                <h2>Add Medicine</h2>
+                <form id="create-form" class="form" onsubmit="return false;">
+                    <div class="form-row">
+                        <label>
+                            Name
+                            <input type="text" id="name" class="input" />
+                        </label>
+                    </div>
+
+                    <div class="form-row">
+                        <label>
+                            Price
+                            <input type="number" step="any" id="price" class="input" />
+                        </label>
+                    </div>
+
+                    <div class="form-actions">
+                        <button id="create" class="btn">Create</button>
+                    </div>
+                </form>
+            </section>
+
+            <section>
+                <h2>Average Price</h2>
+                <p id="avg"></p>
+            </section>
         </div>
 
-        <div class="form-actions">
-          <button id="create" class="btn">Create</button>
-        </div>
-      </form>
-    </section>
+    </main>
 
-    <section>
-      <h2>Average Price</h2>
-      <p id="avg"></p>
-    </section>
-
-  </main>
-
-  <script src="script.js"></script>
+    <script src="script.js"></script>
 </body>
+
 </html>

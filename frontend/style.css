@@ -30,3 +30,237 @@ body {
 }
 
 /* ---- Your custom styles below ---- */
+
+/* Color Palette and Variables */
+:root {
+  --bg: #eef2f8;
+  --surface: #fafbff;
+  --surface-alt: #e5edff;
+
+  --text-main: #12212f;
+  --text-muted: #6b7280;
+
+  --primary: #f7cef7;
+  --primary-hover: #c1fdc4;
+
+  --secondary: #dde8ff;
+  --secondary-hover: #c7d8ff;
+
+  /* Edit/Save buttons */
+  --edit: #e6eef7;
+  --edit-hover: #d9e4f3;
+
+  /* Delete/Cancel buttons */
+  --delete: #f7e8ea;
+  --delete-hover: #f1d8db;
+
+  --border: #d0d7e5;
+
+  --radius: 15px;
+  --radius-pill: 50px;
+  --shadow: 0 8px 20px rgba(15, 23, 42, 0.06);
+}
+
+/* Container */
+.container {
+    width: 100%;
+    max-width: 1400px;
+    padding: 0 32px 40px;
+    background: var(--bg);
+}
+
+/* Header */
+.page-header {
+    width: 100%;
+    max-width: 1400px;
+    margin: 24px;
+    padding: 18px 32px;
+
+    display: flex;
+    align-items: center;
+
+    background: linear-gradient(90deg, var(--secondary), #eef6ff);
+    border-radius: var(--radius-pill);
+    box-shadow: var(--shadow);
+    color: var(--text-main);
+}
+
+.page-header h1 {
+    margin: 0;
+    font-size: 1.8rem;
+}
+
+.page-header .btn {
+    margin-left: auto;
+}
+
+/* Sections */
+section {
+    background: var(--surface);
+    padding: 20px 22px 24px;
+    margin-top: 20px;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    border: 1px solid rgba(208, 215, 229, 0.6);
+}
+
+section h2 {
+    margin: 0;
+    color: var(--text-main);
+    font-size: 1.2rem;
+}
+
+/* Form layout */
+.form {
+    margin-top: 16px;
+}
+
+.form-row {
+    margin-bottom: 14px;
+}
+
+.form-row label {
+    color: var(--text-main);
+}
+
+/* Table */
+.table {
+    margin-top: 12px;
+    width: 100%;
+    border-collapse: collapse;
+    border-radius: var(--radius);
+    overflow: hidden;
+    color: var(--text-main);
+}
+
+.table thead {
+    background: var(--surface-alt);
+}
+
+.table th,
+.table td {
+    padding: 10px;
+    text-align: left;
+}
+
+.table th {
+    border-bottom: 1px solid var(--border);
+}
+
+.table tbody td {
+    color: var(--text-main);
+}
+
+.table tbody tr:nth-child(even) {
+    background: var(--surface);
+}
+
+.table tbody tr:nth-child(odd) {
+    background: #ffffff;
+}
+
+.table tbody tr:hover {
+    background: var(--secondary-hover);
+}
+
+/* Inputs */
+.input {
+    width: 100%;
+    padding: 8px 10px;
+    border-radius: var(--radius-pill);
+    border: 1px solid var(--border);
+    font-size: 0.95rem;
+}
+
+.input:focus {
+    outline: none;
+    border-color: var(--focus);
+    box-shadow: 0 0 0 2px var(--secondary-hover);
+}
+
+/* Buttons */
+.btn {
+    border: 1px var(--border) solid;
+    padding: 8px 18px;
+    border-radius: var(--radius-pill);
+    cursor: pointer;
+    background: var(--primary);
+    color: var(--text-main);
+    font-size: 0.95rem;
+    transition: 0.15s ease;
+}
+
+.btn:hover {
+    background: var(--primary-hover);
+    transform: translateY(-1px);
+}
+
+/* Edit/Delete buttons inside table */
+.table td button {
+    padding: 6px 14px;
+    border-radius: var(--radius-pill);
+    border: none;
+    cursor: pointer;
+}
+
+/* Edit / Save */
+.table td button:nth-child(1) {
+    background: var(--edit);
+    color: #2c3a4a;
+}
+.table td button:nth-child(1):hover {
+    background: var(--edit-hover);
+}
+
+/* Delete / Cancel */
+.table td button:nth-child(2) {
+    background: var(--delete);
+    color: #5f2e34;
+}
+.table td button:nth-child(2):hover {
+    background: var(--delete-hover);
+}
+
+/* Dashboard layout */
+.medicine-dashboard {
+    display: flex;
+    gap: 24px;
+    align-items: flex-start;
+}
+
+.medicine-dashboard .list {
+    flex: 2;
+}
+
+.medicine-dashboard .actions {
+    flex: 1;
+}
+
+.medicine-dashboard .list section {
+    border-top: 4px solid var(--primary);
+}
+
+.medicine-dashboard .actions section {
+    border-top: 4px solid var(--primary);
+}
+
+/* Average card text */
+.average-card p {
+    color: var(--text-muted);
+}
+
+/* Responsive */
+@media (max-width: 820px) {
+    .container {
+        padding: 0 16px 24px;
+    }
+
+    .page-header {
+        padding: 14px 20px;
+        border-radius: 0;
+    }
+
+    .medicine-dashboard {
+        flex-direction: column;
+    }
+}
