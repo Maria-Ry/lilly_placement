@@ -1,17 +1,79 @@
 # Lilly Technical Challenge Documentation Template
 
-*This documentation template serves as a place for you to discuss how you approached this challenge, any issues you faced & how you overcame them, or any other points that you feel would be relevant for the interviewers to know. The text in italics is here to guide you - feel free to remove it once you fill out each section!*
+This document explains how I approached the challenge.
 
-***Not every section in this document is required. This is just a template to help get you started. Feel free to add or remove sections as you feel necessary.***
-
+---
 ## Approach
-*How did you approach this challenge? Did you work through the objectives in any particular order? If so, why? Did you utilize any external resources, such as tutorials, guides, or other materials?*
+I completed the challenge in a **backend → basic UI → full functionality → UI/UX polish** sequence.
 
+1. **Finished the backend task first**  
+   I reviewed all existing endpoints and implemented the missing optional part:  
+   the `/average-price` endpoint, which calculates the average of all valid medicine prices. 
+   This ensured the backend was complete, stable, and ready to support the UI.
+
+2. **Built the HTML and JS structure**  
+   I created the initial layout in `index.html` and implemented basic data fetching from the backend in `script.js`.
+
+   After the basic UI worked, I added:
+   - Create functionality  
+   - Delete functionality  
+   - Inline Edit & Save (turning a row into editable mode)  
+   - Cancel edit & row state restoration  
+   - Safe handling of missing values (`N/A`)  
+
+   This made the app fully interactive and connected every backend endpoint with a real UI action.
+
+3. **Fixed layout and completed full CSS design**  
+   With all functionality working, I redesigned the entire interface using a soft palette in `style.css`
+   I worked out spacing, structure, shadows, borders, input styles, button styles, and responsiveness.
+
+This top-down approach let me focus first on correctness, then on functionality, then on design and polish.
+
+---
 ## Objectives - Innovative Solutions
-*For the challenge objectives, did you do anything in a particular way that you want to discuss? Is there anything you're particularly proud of that you want to highlight? Did you attempt some objectives multiple times, or go back and re-write particular sections of code? If so, why? Use this space to document any key points you'd like to tell us about.*
 
+### Inline Editing Functionality
+
+Clicking “Edit” transforms a row into an editable form:
+- Price becomes an input box
+- Buttons become Save / Cancel
+- Only one row can be edited at a time
+- Cancelling restores original state
+- Saving calls /update
+
+This is handled in openEditRow() in script.js
+
+---
 ## Problems Faced
-*Use this space to document and discuss any issues you faced while undertaking this challenge and how you solved them. We recommend doing this proactively as you experience and resolve the issues - make sure you don't forget! (Screenshots are helpful, though not required)*.
 
+### **1. Incorrect command order in `start.bat`**=
+
+### **2. Medicines without names or IDs**
+Another challenge was that the dataset contains medicines that:
+- Have **no name**
+- Have **invalid or missing prices**
+- Have **no IDs** (so they cannot be uniquely identified)
+
+Since the backend only identifies medicines by name, this created problems:
+
+- Medicines without names cannot be edited or deleted, because `/update` and `/delete` rely on `name` as the identifier.
+- Multiple medicines could theoretically have the same name, making them indistinguishable.
+- Showing an empty name in the frontend breaks the UI layout and user understanding.
+
+I addressed this by:
+- Displaying `"N/A"` in the table when the name is missing.
+- Ensuring that frontend actions do not crash if the name is empty.
+
+---
 ## Evaluation
-*How did you feel about the challenge overall? Did some parts go better than others? Did you run out of time? If you were to do this again, and were given more time, what would you do differently?*
+
+### What went well:
+- Smooth integration between backend and frontend
+- Clean inline editing feature
+- Robust handling of missing values
+- Designed interface
+- Completed optional averaging endpoint
+
+### What I would improve:
+- Add sorting and filtering to the table
+- Validate input fields with custom UI messages instead of browser defaults
